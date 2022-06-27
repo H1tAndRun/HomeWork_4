@@ -9,16 +9,14 @@ public class Watch {
     }
 
 
-    public void tick(){
-        try {
+    public void tick() throws WatchBrokenError{
+
             if (!broken){
                 System.out.println("Часы тикают");
             }else {
-                throw new Exception();
+                throw new WatchBrokenError();
             }
-        } catch (Exception e) {
-            System.out.println("Ошибка часы сломаны");
-        }
+
 
 
     }

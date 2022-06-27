@@ -15,14 +15,18 @@ package Exercise2;
 
 public class Exercise2 {
     public static void main(String[] args) {
-        Shop shop1=new Shop(new Worker(new Watch(true)));
-        Shop shop2=new Shop(new Worker(new Watch(false)));
+        Shop shop1 = new Shop(new Worker(new Watch(false)));
+        Shop shop2 = new Shop(new Worker(new Watch(true)));
 
-        Shop shops[]={shop1,shop2};
-
-        Brand brand=new Brand(shops);
-        for (int i = 0; i < brand.shop.length; i++) {
-            brand.shop[i].worker.watch.tick();
+        Shop shops[] = {shop1, shop2};
+        try {
+            Brand brand = new Brand(shops);
+            for (int i = 0; i < brand.shop.length; i++) {
+                brand.shop[i].worker.watch.tick();
+            }
+        } catch (WatchBrokenError e) {
+            System.out.println("Ошибка : часы сломались");
         }
+
     }
 }

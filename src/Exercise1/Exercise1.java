@@ -20,8 +20,8 @@ import java.util.List;
 
 public class Exercise1 {
     public static void main(String[] args) {
-        Spruce spruce = new Spruce();
-        Pine pine = new Pine();
+        Spruce spruce = new Spruce(true);
+        Pine pine = new Pine(true);
         Rose rose = new Rose();
         Fern fern = new Fern();
 
